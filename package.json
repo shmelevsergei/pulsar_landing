@@ -6,7 +6,6 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build"
-
   },
   "author": "Sergei Shmelev",
   "license": "ISC",
@@ -19,6 +18,7 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^5.1.0",
     "gulp-uglify-es": "^3.0.0",
+    "gulp-webp": "^4.0.1",
     "sass": "^1.55.0"
   }
 }
