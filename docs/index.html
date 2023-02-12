@@ -1,16 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create Landing</title>
+   <title>Document</title>
+   <link type="image/x-icon" href="images/icons/favicon.svg" rel="shortcut icon">
+   <link type="Image/x-icon" href="images/icons/favicon.svg" rel="icon">
+   <link rel="stylesheet" href="css/style.min.css">
+   <script src="js/main.min.js" type="module" defer></script>
 </head>
 
 <body>
-   <h1>Посмотреть сайт можно тут</h1>
-   <h2><a href="../pulsar_landing/dist/index.html">сайт</a></h2>
+   <div class="container">
+      <header class="header">
+         <div class="header__logo">
+            <a href="#"><img src="images/logo.svg" alt="PULSAR"></a>
+         </div>
+         <div class="header__button">
+            <a class="btn" href="#">
+               контакты
+               <svg width="163" height="48" viewBox="0 0 163 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                     d="M158.588 39.3622L162.438 11.3622C163.264 5.35437 158.595 0 152.531 0H14.3191C9.32262 0 5.09291 3.68792 4.4123 8.63782L0.562299 36.6378C-0.263776 42.6456 4.40475 48 10.4691 48H148.681C153.677 48 157.907 44.3121 158.588 39.3622Z"
+                     fill="currentColor" />
+               </svg>
+            </a>
+         </div>
+      </header>
+      <section class="promo">
+         <header class="promo__header">
+            <h2 class="promo__suptitle">
+               Суперсила нового тагера
+            </h2>
+            <h1 class="promo__title">
+               <span>pulsar</span>
+               <img src="images/pulsar-logo.svg" alt="футуристичный бластер">
+            </h1>
+            <div class="promo__image">
+               <img src="images/image-promo.svg" alt="оборудование для спортивного лазертага и военно-тактических игр">
+            </div>
+            <div class="promo__buttons">
+               <a class="promo__buttons-shop btn accent" href="#"> в магазин
+                  <svg width="163" height="48" viewBox="0 0 163 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M158.588 39.3622L162.438 11.3622C163.264 5.35437 158.595 0 152.531 0H14.3191C9.32262 0 5.09291 3.68792 4.4123 8.63782L0.562299 36.6378C-0.263776 42.6456 4.40475 48 10.4691 48H148.681C153.677 48 157.907 44.3121 158.588 39.3622Z"
+                        fill="currentColor" />
+                  </svg>
+               </a>
+               <a href="https://www.youtube.com/watch?v=oUtbc14MFFE&ab_channel=LASERWAR_RU" target="_blank"
+                  class="promo__buttons-video">СМОТРЕТЬ ВИДЕО</a>
+            </div>
+         </header>
+      </section>
+   </div>
+
+
 </body>
 
 </html>

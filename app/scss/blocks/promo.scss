@@ -1,0 +1,71 @@
+.promo {
+   margin-top: 33px;
+   text-align: center;
+
+   &__suptitle {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 16px;
+   }
+
+   &__title {
+      width: 436px;
+      height: 48px;
+      margin: 0 auto;
+      margin-top: 17px;
+
+      span {
+         display: block;
+         opacity: 0;
+         scale: 0;
+         width: 0;
+         height: 0;
+      }
+   }
+
+   &__image {
+      margin-top: 40px;
+      width: 639px;
+      height: 360px;
+      margin: 0 auto;
+      position: relative;
+
+      &::before {
+         position: absolute;
+         content: '';
+         width: 1200px;
+         height: 350px;
+         background: url('../images/hero-floor.svg') center / cover no-repeat;
+         top: 128px;
+         left: 50%;
+         transform: translateX(-50%);
+         z-index: -1;
+      }
+   }
+
+   &__buttons {
+      display: flex;
+      gap: 23px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 34px;
+
+      &-video {
+         padding-left: 32px;
+         position: relative;
+         text-transform: uppercase;
+
+         &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 100%;
+            background: url('../images/icons/play.svg') center / cover no-repeat;
+         }
+      }
+   }
+}

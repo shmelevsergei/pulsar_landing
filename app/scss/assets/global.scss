@@ -1,11 +1,12 @@
 body {
-   font-size: 18px;
+   font-size: 16px;
    line-height: 1;
    overflow-x: hidden;
    position: relative;
-   font-family: var(--raleway);
-   font-weight: 500;
-   color: var(--colorPrimary);
+   font-family: var(--monts);
+   font-weight: 400;
+   color: var(--colorWhite);
+   background-color: var(--colorBg);
 
    &.menu-open {
       overflow-y: hidden;
@@ -13,19 +14,21 @@ body {
 }
 
 .container {
-   max-width: 1460px;
+   max-width: 1220px;
    padding: 0 10px;
    margin: 0 auto;
 
-   @media screen and (min-width: 768px) and (max-width: 1366px) {
-      padding: 0 20px;
+   @media (max-width: 1199.98px) {
+      max-width: 100%;
+      width: 100%;
+      padding: 0 50px
    }
-}
 
-._btn {
-   border-radius: 12px;
-   background-color: var(--colorAccentPrimary);
-   display: inline-flex;
-   justify-content: center;
-   align-items: center;
+   @media (max-width: 999.98px) {
+      padding: 0 30px
+   }
+
+   @media (max-width: 999.98px) {
+      padding: 0 10px
+   }
 }
