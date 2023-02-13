@@ -1,0 +1,31 @@
+.parallax {
+   margin-top: 140px;
+
+   &__wrapper {
+      display: flex;
+      gap: 28px;
+   }
+
+   &__col {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      &._left {
+         padding-bottom: 254px;
+      }
+
+      &._right {
+         padding-top: 254px;
+      }
+   }
+
+   &__text {
+      margin: 0 auto;
+      margin-top: 140px;
+      max-width: 641px;
+      text-align: center;
+      font-size: 20px;
+      line-height: 135%;
+   }
+}

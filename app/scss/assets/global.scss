@@ -17,6 +17,7 @@ body {
    max-width: 1220px;
    padding: 0 10px;
    margin: 0 auto;
+   position: relative;
 
    @media (max-width: 1199.98px) {
       max-width: 100%;
@@ -31,4 +32,12 @@ body {
    @media (max-width: 999.98px) {
       padding: 0 10px
    }
+}
+
+.text-blue {
+   color: var(--colorAccent);
+}
+
+.text-gray {
+   color: var(--colorTextDark);
 }

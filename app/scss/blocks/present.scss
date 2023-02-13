@@ -1,0 +1,31 @@
+.present {
+   margin-top: 140px;
+
+
+   &__top {
+      height: 750px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+
+      & .container {
+         height: 100%;
+      }
+
+      img {
+         width: 1602px;
+         height: 1134px;
+         position: absolute;
+         object-fit: contain;
+         top: 20px;
+         right: -209px;
+      }
+   }
+
+   &__top-descr {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 300px;
+   }
+}

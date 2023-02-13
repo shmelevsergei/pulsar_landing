@@ -1,0 +1,41 @@
+.text {
+   margin-top: 140px;
+
+   &__header {
+      margin: 0 auto;
+      max-width: 1088px;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 46px;
+      text-align: center;
+   }
+
+   &__image {
+      max-width: 1600px;
+      width: 100%;
+      margin-top: 140px;
+      position: relative;
+
+   }
+
+   &__descr {
+      &-wrapper {
+         position: absolute;
+         display: flex;
+         width: 100%;
+         bottom: 0;
+         justify-content: space-between;
+         color: #555555;
+         line-height: 135%;
+      }
+
+      &-left {
+         max-width: 353px;
+      }
+
+      &-right {
+         text-align: right;
+      }
+
+   }
+}
