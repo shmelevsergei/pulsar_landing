@@ -1,6 +1,10 @@
 .present {
    margin-top: 140px;
 
+   @media (max-width: 639.98px) {
+      margin-top: 100px;
+   }
+
 
    &__top {
       height: 750px;
@@ -8,24 +12,104 @@
       overflow: hidden;
       position: relative;
 
+      @media (max-width: 639.98px) {
+         height: 370px;
+      }
+
       & .container {
          height: 100%;
       }
 
-      img {
-         width: 1602px;
-         height: 1134px;
-         position: absolute;
-         object-fit: contain;
-         top: 20px;
-         right: -209px;
+      &-descr {
+         width: 300px;
+
+         @media (max-width: 639.98px) {}
       }
    }
 
-   &__top-descr {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 300px;
+   &__text {
+      font-size: 16px;
+      line-height: 135%;
+
+      @media (max-width: 639.98px) {
+         font-size: 13px;
+      }
+
+      &._top {
+         &:not(:last-child) {
+            margin-top: 20px;
+            margin-bottom: 10px;
+
+            @media (max-width: 639.98px) {
+               margin-top: 15px;
+            }
+         }
+      }
+
+      &._middle {
+         margin-top: 20px;
+      }
    }
+
+   &__middle {
+      margin-top: 140px;
+
+      @media (max-width: 639.98px) {
+         margin-top: 60px;
+      }
+
+      & .container {
+         display: flex;
+         width: 100%;
+         justify-content: flex-end;
+
+         @media (max-width: 639.98px) {
+            justify-content: flex-start;
+         }
+      }
+
+      &-descr {
+         max-width: 300px;
+
+         ul {
+            li {
+               padding-left: 24px;
+               position: relative;
+
+               &:before {
+                  position: absolute;
+                  content: '·';
+                  left: 12px;
+
+               }
+            }
+         }
+      }
+
+   }
+
+   &__bottom {
+      margin-top: 140px;
+      position: relative;
+      height: 750px;
+      width: 100%;
+
+      @media (max-width: 639.98px) {
+         margin-top: 60px;
+         height: 308px;
+      }
+
+
+      & .container {
+         height: 100%;
+      }
+
+      &-descr {
+         max-width: 300px;
+
+         @media (max-width: 639.98px) {}
+      }
+   }
+
+
 }

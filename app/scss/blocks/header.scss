@@ -8,9 +8,37 @@
       width: 200px;
       height: 20px;
 
+      @media (max-width: 639.98px) {
+         width: 149px;
+         height: 15px;
+      }
+
       a {
          width: 100%;
          height: 100%;
+      }
+   }
+
+   &__button {
+
+      a {
+         @media (max-width: 639.98px) {
+            width: 100%;
+            height: 100%;
+         }
+
+
+         svg {
+            width: 100%;
+            height: 100%;
+         }
+      }
+
+      @media (max-width: 639.98px) {
+         width: 126px;
+         height: 37px;
+         font-size: 13px;
+         line-height: 16px;
       }
    }
 }

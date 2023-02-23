@@ -9,10 +9,27 @@
    <link type="image/x-icon" href="images/icons/favicon.svg" rel="shortcut icon">
    <link type="Image/x-icon" href="images/icons/favicon.svg" rel="icon">
    <link rel="stylesheet" href="css/style.min.css">
-   <script src="js/main.min.js" type="module" defer></script>
+
+   <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.139.0/build/three.module.js",
+                "OrbitControls": "https://unpkg.com/three@0.139.0/examples/jsm/controls/OrbitControls.js",
+                "GLTFLoader": "https://unpkg.com/three@0.139.0/examples/jsm/loaders/GLTFLoader.js",
+                "RectAreaLightHelper": "https://unpkg.com/three@0.139.0/examples/jsm/helpers/RectAreaLightHelper.js",
+                "RectAreaLightUniformsLib": "https://unpkg.com/three@0.139.0/examples/jsm/lights/RectAreaLightUniformsLib.js"
+            }
+        }
+    </script>
+   <script src="./js/main.min.js" type="module" defer></script>
+
+
 </head>
 
 <body>
+   <div class="preloader">
+      <div class="preloader__item"></div>
+   </div>
    <div class="container">
       <header class="header">
          <div class="header__logo">
@@ -20,53 +37,79 @@
          </div>
          <div class="header__button">
             <a class="btn" href="#">
-               контакты
-               <svg width="163" height="48" viewBox="0 0 163 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                     d="M158.588 39.3622L162.438 11.3622C163.264 5.35437 158.595 0 152.531 0H14.3191C9.32262 0 5.09291 3.68792 4.4123 8.63782L0.562299 36.6378C-0.263776 42.6456 4.40475 48 10.4691 48H148.681C153.677 48 157.907 44.3121 158.588 39.3622Z"
-                     fill="currentColor" />
-               </svg>
+               <div class="btn-bg"></div>
+               <div class="text-btn">
+                  контакты
+               </div>
             </a>
          </div>
       </header>
-
+      <section class="promo">
+         <header class="promo__header">
+            <h2 class="promo__suptitle">
+               Суперсила нового тагера
+            </h2>
+            <h1 class="promo__title">
+               <span>pulsar</span>
+               <img src="images/pulsar-logo.svg" alt="футуристичный бластер">
+            </h1>
+            <div class="promo__image">
+               <img src="images/image-promo.svg" alt="оборудование для спортивного лазертага и военно-тактических игр">
+            </div>
+            <div class="promo__buttons">
+               <a class="promo__buttons-shop btn accent" href="#"> в магазин
+                  <svg width="163" height="48" viewBox="0 0 163 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M158.588 39.3622L162.438 11.3622C163.264 5.35437 158.595 0 152.531 0H14.3191C9.32262 0 5.09291 3.68792 4.4123 8.63782L0.562299 36.6378C-0.263776 42.6456 4.40475 48 10.4691 48H148.681C153.677 48 157.907 44.3121 158.588 39.3622Z"
+                        fill="currentColor" />
+                  </svg>
+               </a>
+               <a href="https://www.youtube.com/watch?v=oUtbc14MFFE&ab_channel=LASERWAR_RU" target="_blank"
+                  class="promo__buttons-video">СМОТРЕТЬ ВИДЕО</a>
+            </div>
+         </header>
+      </section>
    </div>
+<<<<<<< HEAD
    <section class="promo">
-      <header class="promo__header">
+      <div class="promo__header">
          <h2 class="promo__suptitle">
             Суперсила нового тагера
          </h2>
          <h1 class="promo__title">
             <span>pulsar</span>
-            <img src="images/pulsar-logo.svg" alt="футуристичный бластер">
+            <img src="./images/pulsar-logo.svg" alt="футуристичный бластер">
          </h1>
-         <div class="promo__image">
-            <img src="images/image-promo.svg" alt="оборудование для спортивного лазертага и военно-тактических игр">
-         </div>
-         <div class="promo__buttons">
-            <a class="promo__buttons-shop btn accent" href="#"> в магазин
-               <svg width="163" height="48" viewBox="0 0 163 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                     d="M158.588 39.3622L162.438 11.3622C163.264 5.35437 158.595 0 152.531 0H14.3191C9.32262 0 5.09291 3.68792 4.4123 8.63782L0.562299 36.6378C-0.263776 42.6456 4.40475 48 10.4691 48H148.681C153.677 48 157.907 44.3121 158.588 39.3622Z"
-                     fill="currentColor" />
-               </svg>
-            </a>
-            <a href="https://www.youtube.com/watch?v=oUtbc14MFFE&ab_channel=LASERWAR_RU" target="_blank"
-               class="promo__buttons-video">СМОТРЕТЬ ВИДЕО</a>
-         </div>
-      </header>
+
+      </div>
+      <div class="promo__image js_3d-model"></div>
+
+      <div class="promo__buttons">
+         <a class="promo__buttons-shop btn " href="#">
+            <div class="btn-bg accent"></div>
+            <div class="text-btn">
+               в магазин
+            </div>
+         </a>
+         <a href="https://www.youtube.com/watch?v=oUtbc14MFFE&ab_channel=LASERWAR_RU" target="_blank"
+            class="promo__buttons-video">СМОТРЕТЬ ВИДЕО</a>
+      </div>
    </section>
 
    <section class="text">
-      <p class="text__header">
+
+      <p class="text__header _anim-item">
          <span class="text-blue">Обладатели тагера прочувствуют всю силу и преимущества будущего.</span> <span
             class="text-gray">В модели сочетается</span> футуристичный бластер, оборудование для спортивного
          лазертага и военно-тактических игр. <span class="text-gray">Все элементы работают</span> как одно целое,
-         <span class="text-gray">делая игру </span> <span class="text-blue">невероятной и одновременно лёгкой.</span>
+         <span class="text-gray">делая игру </span> <span class="text-blue">невероятной и одновременно
+            лёгкой.</span>
       </p>
 
-      <div class="text__image">
-         <img src="images/tager-side.svg" alt="тагер">
+
+
+      <div class="text__image _anim-item">
+         <img src="./images/tager-side.svg" alt="тагер">
          <div class="text__descr">
             <div class="container">
                <div class="text__descr-wrapper">
@@ -88,16 +131,17 @@
       <div class="container">
          <div class="parallax__wrapper">
             <div class="parallax__col _left">
-               <img src="images/paralax-Image04.svg" alt="LASERWAR">
-               <img src="images/paralax-Image02.svg" alt="LASERWAR">
+               <img src="./images/paralax-Image04.svg" alt="LASERWAR">
+               <img src="./images/paralax-Image02.svg" alt="LASERWAR">
             </div>
             <div class="parallax__col _right">
-               <img src="images/paralax-Image01.svg" alt="LASERWAR">
-               <img src="images/paralax-Image03.svg" alt="LASERWAR">
+               <img src="./images/paralax-Image01.svg" alt="LASERWAR">
+               <img src="./images/paralax-Image03.svg" alt="LASERWAR">
             </div>
          </div>
-         <div class="parallax__text">
-            <p>Специалисты LASERWAR создали тагер, который перевернёт рынок лазертаг-оборудования. Накопленный годами
+         <div class="parallax__text _anim-item">
+            <p>Специалисты LASERWAR создали тагер, который перевернёт рынок лазертаг-оборудования. Накопленный
+               годами
                опыт, инновационные технологии, совершенство каждой детали — <span class="text-blue">это всё
                   Pulsar.</span>
             </p>
@@ -108,16 +152,18 @@
    <section class="cards">
       <div class="container">
          <div class="cards__top">
-            <div class="cards__item _item-1">
-               <img src="images/Usage-Image-1.svg" alt="Usage-Image">
+            <div class="cards__item _item-1 _anim-item">
+               <img src="./images/Usage-Image-1.svg" alt="Usage-Image">
                <div class="cards__descr _item-1">
                   <h3 class="cards__title _item-1 h3-title">Лёгкость использования </h3>
-                  <p class="cards__text _item-1">Мы сделали тагер, который не хочется выпускать из рук. Широкая передняя
+                  <p class="cards__text _item-1">Мы сделали тагер, который не хочется выпускать из рук. Широкая
+                     передняя
                      рукоятка обеспечивает комфорт в ближнем бою, что особенно пригодится для игр в помещениях.
                   </p>
                   <p class="cards__text _item-1">Размеры
                      Pulsar
-                     соответствуют классу Personal Defend Weapon. Никаких ограничений в игре — тагер создан для игроков
+                     соответствуют классу Personal Defend Weapon. Никаких ограничений в игре — тагер создан для
+                     игроков
                      любого
                      пола и возраста.</p>
                </div>
@@ -125,11 +171,12 @@
          </div>
 
          <div class="cards__bottom">
-            <div class="cards__item _item-2">
-               <img src="images/SecondHeand-Image.svg" alt="SecondHeand-Image">
+            <div class="cards__item _item-2 _anim-item">
+               <img src="./images/SecondHeand-Image.svg" alt="SecondHeand-Image">
                <div class="cards__descr _item-2">
                   <h3 class="cards__title _item-2 h3-title">Датчик второй руки </h3>
-                  <p class="cards__text _item-2">Специально для спортивных турниров и аренного лазертага в Pulsar есть
+                  <p class="cards__text _item-2">Специально для спортивных турниров и аренного лазертага в Pulsar
+                     есть
                      датчик
                      второй руки.Встроенная подсветка
                      сигнализирует о его активации. На поле нет места нечестной игре. Тагер отвечает всем правилам
@@ -139,14 +186,15 @@
                </div>
             </div>
 
-            <div class="cards__item _item-3">
-               <img src="images/Reload-Image.svg" alt="Reload-Image">
+            <div class="cards__item _item-3 _anim-item">
+               <img src="./images/Reload-Image.svg" alt="Reload-Image">
                <div class="cards__descr _item-3">
                   <h3 class="cards__title _item-3 h3-title">Инновация перезарядки </h3>
                   <p class="cards__text _item-3">Привычный затвор заменила удобная клавиша. Одно прикосновение
                      и восполняется
                      запас патронов. Не нужно лишних движений
-                     в игре. Кнопка специально расположена внизу дополнительной рукоятки, чтобы игрок за пару секунд
+                     в игре. Кнопка специально расположена внизу дополнительной рукоятки, чтобы игрок за пару
+                     секунд
                      перезарядил тагер.
                   </p>
                </div>
@@ -157,41 +205,260 @@
    </section>
 
    <section class="present">
-      <div class="present__top">
-         <img src="images/image-8.svg" alt="image-8">
-         <div class="container">
-            <div class="present__top-descr">
-               <h3 class="present__title h3-title">Оптическая система</h3>
-               <p class="present__text _top">Возможность установки классической «Призмы» или точного “Паралакс 2.0”
-                  Оптика имеет все необходимые сертификаты безопасности</p>
-            </div>
+      <div class="present__wrapper">
+         <div class="present__image-wrapper">
+            <canvas id="video-present" class="present__image"></canvas>
          </div>
-      </div>
-      <div class="present__middle">
+         <div class="present__top-descr">
+            <h3 class="present__title h3-title">Оптическая система</h3>
+            <p class="present__text _top">Возможность установки классической «Призмы» или точного “Паралакс
+               2.0”</p>
+            <p class="present__text _top">Оптика имеет все необходимые сертификаты безопасности </p>
+         </div>
+
          <div class="present__middle-descr">
-            <div class="container">
-               <h3 class="present__title">Мягкий бампер  из экорезины разных цветов </h3>
-               <ul class="present__text _middle">
-                  <li>Оригинальная форма</li>
-                  <li>Защита игроков</li>
-                  <li>Четыре цвета</li>
-               </ul>
-            </div>
+            <h3 class="present__title h3-title">Мягкий бампер из экорезины разных цветов </h3>
+            <ul class="present__text _middle">
+               <li>Оригинальная форма</li>
+               <li>Защита игроков</li>
+               <li>Четыре цвета</li>
+            </ul>
+         </div>
+
+         <div class="present__bottom-descr">
+            <h3 class="present__title _bottom h3-title">Инновационная подсветка выстрела
+            </h3>
          </div>
       </div>
 
-      <div class="present__bottom">
-         <img src="images/image-9.svg" alt="image-9">
-         <div class="present__bottom-descr">
+
+   </section>
+   <div class="content-video">
+      <div class="wrapper-video">
+         <section class="video-1 video-block">
+            <canvas id="video-demo" class="video__image canvas-video"></canvas>
+         </section>
+
+         <section class="video-2 video-block">
+            <canvas id="video-demo-1" class="video__image canvas-video"></canvas>
+         </section>
+
+         <section class="accum video-block">
             <div class="container">
-               <h3 class="present__title _bottom">Инновационная подсветка выстрела
-               </h3>
+               <div class="accum__descr-top js_accum-descr-1">
+                  <h3 class="accum__title h3-title">Дополнительный аккумулятор</h3>
+                  <p class="accum__text ">Модель Pulsar поддерживает все поколения электроники LASERWAR. Возможности
+                     тагера
+                     в
+                     ваших руках,
+                     всё зависит от типа
+                     используемой платформы: аренный, внеаренный или спортивный.
+                  </p>
+               </div>
+               <div class="accum__descr-bottom js_accum-descr-2">
+                  <h3 class="accum__title h3-title">Дополнительный аккумулятор</h3>
+                  <p class="accum__text ">Для увеличения времени автономной работы в корпусе предусмотрено целых два
+                     отсека
+                     под аккумуляторы типоразмера 26650.
+                     При использовании любого типа электроники время автономной работы повышается в несколько раз.
+
+                  </p>
+               </div>
+            </div>
+            <canvas id="accum-demo" class="accum__demo"></canvas>
+         </section>
+
+         <sectioin class="trigger video-block">
+            <div class="container">
+               <div class="trigger__descr js_trigger-descr">
+                  <h3 class="trigger__title h3-title">Магия нажатий</h3>
+                  <p class="trigger__text ">На спусковом механизме тагера разместили магнитные датчики. Повышена
+                     надёжность и
+                     износоустойчивость. Спусковой крючок
+                     готов к бесконечному числу нажатий. Никаких осечек и ложных выстрелов, только уверенное и чёткое
+                     срабатывание.
+                  </p>
+               </div>
+            </div>
+
+            <canvas id="trigger-demo" class="trigger__demo"></canvas>
+         </sectioin>
+
+         <sectioin class="return video-block">
+            <div class="container">
+               <div class="return__descr js_return-descr">
+                  <h3 class="return__title h3-title">Отдача на максимум</h3>
+                  <p class="return__text ">Pulsar меняет все прежние представления о тагерах для лазертага. Мы взяли
+                     проверенную функцию Feedback и добавили
+                     абсолютно новую мощную импульсную отдачу. Что получилось? Реалистичные ощущения от выстрела стали
+                     ещё
+                     сильнее. Ради
+                     этого эффекта владельцам игрокам захочется как можно чаще нажимать на курок.
+                  </p>
+               </div>
+            </div>
+            <canvas id="return-demo" class="return__demo"></canvas>
+         </sectioin>
+
+         <sectioin class="lights video-block">
+            <div class="container">
+               <div class="lights__descr js_lights-descr">
+                  <h3 class="lights__title h3-title">Подсветка цвета команды Ambi Light 2.0 </h3>
+               </div>
+            </div>
+            <canvas id="lights-demo" class="lights__demo"></canvas>
+         </sectioin>
+      </div>
+   </div>
+
+
+
+
+   <section class="tabs">
+      <video id="army" class="video-army tabs-item" src="images/video/colors.mp4" autoplay loop></video>
+      <video id="arena" class="video-aren tabs-item" src="images/video/manifestation.mp4" autoplay loop></video>
+      <video id="sport" class="video-sport tabs-item" src="images/video/particles.mp4" autoplay loop></video>
+      <div class="tabs__buttons">
+         <button class="button-army tabs-button" type="button" data-tab="#army">Внеаренный лазертаг</button>
+         <button class="button-arena tabs-button" type="button" data-tab="#arena">Аренный лазертаг</button>
+         <button class="button-sport tabs-button" type="button" data-tab="#sport">Спорт</button>
+      </div>
+   </section>
+
+   <section class="grid">
+      <div class="container">
+         <div class="grid__wrapper">
+            <div class="grid__item pikatini _anim-item">
+               <img src="images/pikatini.svg" alt="Пикатини">
+               <div class="grid__descr">
+                  <h4>Планка Пикатини</h4>
+               </div>
+            </div>
+            <div class="grid__item savety _anim-item">
+               <img src="images/savety.svg" alt="Приклад">
+               <div class="grid__descr">
+                  <ul>
+                     <li>Мягкий безопасный наконечник и приклад </li>
+                     <li>Оптика имеет сертификат безопасности</li>
+                  </ul>
+               </div>
+            </div>
+            <div class="grid__item simmetry _anim-item">
+               <img src="images/simmetry.svg" alt="Симметрия">
+               <div class="grid__descr">
+                  <h4>Симметрия</h4>
+               </div>
+            </div>
+
+            <div class="grid__item priklad _anim-item">
+               <img src="images/priklad.svg" alt="Приклад">
+               <div class="grid__descr">
+                  <h4>Удобный эргономичный приклад</h4>
+               </div>
+            </div>
+
+            <div class="grid__item charge _anim-item">
+               <img src="images/charge.svg" alt="питание">
+               <div class="grid__descr">
+                  <h4>Защищенное питание и кнопка включения</h4>
+               </div>
+            </div>
+
+            <div class="grid__item sound _anim-item">
+               <img src="images/sound.svg" alt="Звук">
+               <div class="grid__descr">
+                  <h3>Звук</h3>
+                  <ul>
+                     <li>Предельная громкость</li>
+                     <li>Чистое звучание</li>
+                     <li>Динамик диаметром 57 мм</li>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="grid__item plastik _anim-item">
+               <img src="images/plastik.svg" alt="Приклад">
+               <div class="grid__descr">
+                  <ul>
+                     <li>Прочный пластик нового поколения </li>
+                     <li>Мягкий приклад из экорезины </li>
+                  </ul>
+               </div>
             </div>
          </div>
       </div>
    </section>
+=======
+>>>>>>> parent of 8a18277 (2)
+
+   <section class="vr">
+      <div class="container">
+         <div class="vr__wrapper">
+            <div class="vr__descr">
+               <div class="vr__descr-wrapper">
+                  <img src="images/icons/AR_icon.svg" alt="AR_icon">
+                  <h2 class="vr__title h3-title">Use AR to see your future tager</h2>
+               </div>
+               <p class="vr__suptitle">Open this page in Safari on iPhone or iPad
+                  to view Hydra in Augmented Reality.</p>
+            </div>
+            <div class="vr__video">
+               <div class="vr__video-bg">
+                  <img src="images/iPhone.png" alt="iPhone">
+                  <video loop autoplay buffered>
+                     <source src="images/video/vr.mp4" type="video/mp4">
+                  </video>
+               </div>
+               <div class="vr__video-qr">
+                  <img src="images/qr.svg" alt="qr">
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+   <footer class="footer">
+      <div class="container">
+         <div class="footer__wrapper">
+            <div class="footer__descr">
+               <div class="footer__title h3-title">Успей купить!</div>
+               <p class="footer__text _desctop">Всё переплетено в бесконечном единстве линий. Форма подстраивается
+                  под
+                  изгиб
+                  руки, продолжая её. Pulsar с лёгкостью
+                  станет героем фантастических фильмов. Его внешний вид завораживает своими изгибами и геометрией.
+               </p>
+               <p class="footer__text _mobile">Невероятное предлоение от компании LASERWAR. Незабываемый опыт,
+                  который
+                  вы получите втечение первых 15 секунд. И все.
+                  Да. Все.</p>
+               <div class="footer__buttons">
+                  <a class="btn" href="#">
+                     <div class="btn-bg"></div>
+                     <div class="text-btn">
+                        контакты
+                     </div>
+                  </a>
+                  <a class="btn" href="#">
+                     <div class="btn-bg accent"></div>
+                     <div class="text-btn">
+                        в магазин
+                     </div>
+                  </a>
+               </div>
+            </div>
+            <div class="footer__img"><img src="images/savety-footer.svg" alt="savety"></div>
+         </div>
+      </div>
+   </footer>
 
 
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
 </body>
 
 </html>

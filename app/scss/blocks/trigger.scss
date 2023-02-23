@@ -1,0 +1,16 @@
+.trigger {
+   position: relative;
+
+   &__descr {
+      position: absolute;
+      top: 340px;
+      left: 0;
+      z-index: 100;
+      width: 400px;
+   }
+
+   &__text {
+      margin-top: 20px;
+      line-height: 135%;
+   }
+}

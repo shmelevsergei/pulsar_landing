@@ -1,3 +1,5 @@
 node_modules
 app/sources
+app/images/frames
+app/images/video
 dist

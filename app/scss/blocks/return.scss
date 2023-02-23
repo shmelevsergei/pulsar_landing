@@ -1,0 +1,16 @@
+.return {
+   position: relative;
+
+   &__descr {
+      position: absolute;
+      top: 79px;
+      right: 0;
+      z-index: 100;
+      width: 400px;
+   }
+
+   &__text {
+      margin-top: 20px;
+      line-height: 135%;
+   }
+}

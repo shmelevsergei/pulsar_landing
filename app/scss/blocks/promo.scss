@@ -1,6 +1,9 @@
 .promo {
    margin-top: 33px;
    text-align: center;
+   height: 100vh;
+   position: relative;
+
 
    &__suptitle {
       font-weight: 700;
@@ -12,7 +15,16 @@
       width: 436px;
       height: 48px;
       margin: 0 auto;
-      margin-top: 27px;
+      margin-top: 17px;
+
+      img {
+         object-fit: contain;
+      }
+
+      @media (max-width: 639.98px) {
+         width: 300px;
+         height: 34px;
+      }
 
       span {
          display: block;
@@ -24,22 +36,29 @@
    }
 
    &__image {
+<<<<<<< HEAD
+      display: block;
+      width: 70vw;
+      height: 60vh;
+      margin: 0 auto;
+      margin-top: 40px;
+=======
+      margin-top: 40px;
       width: 639px;
       height: 360px;
       margin: 0 auto;
-      margin-top: 40px;
       position: relative;
+>>>>>>> parent of 8a18277 (2)
 
-      &::before {
-         position: absolute;
-         content: '';
-         width: 1200px;
-         height: 350px;
-         background: url('../images/hero-floor.svg') center / cover no-repeat;
-         top: 128px;
-         left: 50%;
-         transform: translateX(-50%);
-         z-index: -1;
+      @media (max-width: 639.98px) {
+         width: 320px;
+         max-height: 180px;
+         height: 100%;
+      }
+
+      canvas {
+         width: 100%;
+         height: 100%;
       }
    }
 
@@ -48,7 +67,34 @@
       gap: 23px;
       align-items: center;
       justify-content: center;
-      margin-top: 34px;
+      margin-top: 22px;
+
+      @media (max-width: 639.98px) {
+         flex-direction: column;
+      }
+
+      &-shop {
+         @media (max-width: 639.98px) {
+            a {
+               width: 100%;
+               height: 100%;
+            }
+
+
+            svg {
+               path {
+                  width: 100%;
+                  height: 100%;
+               }
+
+            }
+         }
+
+         @media (max-width: 639.98px) {
+            width: 300px;
+         }
+      }
+
 
       &-video {
          padding-left: 32px;

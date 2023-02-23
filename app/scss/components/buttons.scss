@@ -8,26 +8,45 @@
 
    font-weight: 700;
    text-transform: uppercase;
+   border-radius: 10px;
 
-   svg {
+   & .text-btn {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-
-      path {
-         fill: var(--colorButtonBg);
-      }
-
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
    }
 
-   &.accent {
-      svg {
-         path {
-            fill: var(--colorAccent);
+
+   &-bg {
+      width: 100%;
+      height: 100%;
+      transform: skewX(-13deg);
+      border-radius: 10px;
+      background-color: #393939;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+         background-color: #1C1C1C;
+      }
+
+      &:active {
+         background-color: #008BD9;
+      }
+
+      &.accent {
+         background-color: #04A4FE;
+
+         &:hover {
+            background-color: #59C3FF;
+         }
+
+         &:active {
+            background-color: #008BD9;
          }
       }
    }
+
 }

@@ -1,15 +1,33 @@
 .cards {
    margin-top: 140px;
 
+   @media (max-width:639.98px) {
+      margin-top: 100px;
+   }
+
    &__item {
       position: relative;
       border-radius: 10px;
       overflow: hidden;
       width: 100%;
+      background-color: #172023;
 
       &._item-1 {
          background-color: #12181B;
          height: 570px;
+
+         transform: translate(0px, 100px);
+         opacity: 0;
+         transition: all .8s ease-in;
+
+         &._active {
+            transform: translate(0px, 0px);
+            opacity: 1;
+         }
+
+         @media (max-width:639.98px) {
+            height: 541px;
+         }
 
          img {
             position: absolute;
@@ -18,6 +36,46 @@
             width: 1024px;
             height: 577px;
             object-fit: contain;
+
+            @media (max-width:639.98px) {
+               width: 653px;
+               height: 367px;
+               left: -85px;
+               top: 0px;
+            }
+         }
+      }
+
+      &._item-2 {
+         transform: translate(-100px, 0px);
+         opacity: 0;
+         transition: all .8s ease-in;
+
+         &._active {
+            transform: translate(0px, 0px);
+            opacity: 1;
+         }
+      }
+
+      &._item-3 {
+         transform: translate(100px, 0px);
+         opacity: 0;
+         transition: all .8s ease-in;
+
+         &._active {
+            transform: translate(0px, 0px);
+            opacity: 1;
+         }
+      }
+
+      &._item-2,
+      &._item-3 {
+         img {
+            object-fit: cover;
+         }
+
+         @media (max-width:639.98px) {
+            height: 360px;
          }
       }
    }
@@ -27,6 +85,13 @@
       display: block;
       left: 30px;
       bottom: 50px;
+
+      @media (max-width:639.98px) {
+         width: 270px;
+         left: 15px;
+         bottom: 25px;
+
+      }
 
       &._item-1 {
          max-width: 450px;
@@ -42,10 +107,6 @@
    }
 
    &__title {
-      font-weight: 600;
-      font-size: 30px;
-      line-height: 113.9%;
-
       &._item-1 {
          width: 400px;
       }
@@ -55,6 +116,11 @@
       font-size: 16px;
       line-height: 135%;
       margin-top: 20px;
+
+      @media (max-width:639.98px) {
+         margin-top: 15px;
+         font-size: 13px;
+      }
 
       &._item-1 {
          &:not(:last-child) {
@@ -72,5 +138,9 @@
       display: flex;
       margin-top: 20px;
       gap: 20px;
+
+      @media (max-width:639.98px) {
+         flex-direction: column;
+      }
    }
 }

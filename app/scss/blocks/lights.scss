@@ -1,0 +1,11 @@
+.lights {
+   position: relative;
+
+   &__descr {
+      position: absolute;
+      top: 118px;
+      right: 0;
+      z-index: 100;
+      width: 400px;
+   }
+}
