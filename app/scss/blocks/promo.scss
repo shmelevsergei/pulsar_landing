@@ -36,19 +36,13 @@
    }
 
    &__image {
-<<<<<<< HEAD
+
       display: block;
       width: 70vw;
       height: 60vh;
       margin: 0 auto;
       margin-top: 40px;
-=======
-      margin-top: 40px;
-      width: 639px;
-      height: 360px;
-      margin: 0 auto;
-      position: relative;
->>>>>>> parent of 8a18277 (2)
+
 
       @media (max-width: 639.98px) {
          width: 320px;

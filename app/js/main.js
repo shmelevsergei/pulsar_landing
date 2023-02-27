@@ -4,13 +4,27 @@ import { GLTFLoader } from 'GLTFLoader';
 import { RectAreaLightHelper } from 'RectAreaLightHelper'
 import { RectAreaLightUniformsLib } from 'RectAreaLightUniformsLib';
 import preloader from './preloader.js';
-import animate from './animate.js';
-
+import animateBlocks from './animate.js';
+import tabsButton from './tabs.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
+   Splitting();
+   luxy.init();
    preloader();
+   promo();
+   animateBlocks();
+   parallax();
+
+   // ============ Tabs ============== //
+   const tabsBtn = document.querySelector('.tabs-button');
+   const tabsBtns = document.querySelectorAll('.tabs-button');
+   const tabsItems = document.querySelectorAll('.tabs-item');
+   tabsButton(tabsBtns, tabsItems, tabsBtn);
+   // ============ End Tabs ============== //
+
+   gsap.registerPlugin(ScrollTrigger);
 
    function promo() {
       let model = document.querySelector('.js_3d-model');
@@ -135,14 +149,31 @@ document.addEventListener('DOMContentLoaded', () => {
       init();
    }
 
+   function parallax() {
+      gsap.from('.parallax__col._left', {
+         scrollTrigger: {
+            trigger: '.parallax__wrapper',
+            start: 'top bottom',
+            scrub: 1.9,
+         },
+         yPercent: 10,
+      })
+      gsap.to('.parallax__col._right', {
+         scrollTrigger: {
+            trigger: '.parallax__wrapper',
+            start: 'top top',
+            scrub: 1.9,
+         },
+         yPercent: -20,
+      })
+   }
+
    function animateOnScroll(canvasID, videoInfo) {
       const canvas = document.getElementById(canvasID);
       const canvasContext = canvas.getContext('2d');
 
-      const wrapperCanvas = document.querySelectorAll('.video-block');
-
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = 1920;
+      canvas.height = 1080;
 
       for (let i = 0; i <= videoInfo.totalFrames; i++) {
          const img = new Image();
@@ -158,9 +189,9 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger: canvas,
             start: 'top',
             end: `bottom+=${videoInfo.totalFrames * videoInfo.totalTime}`,
-            scrub: 2,
+            scrub: true,
             pin: true,
-            // markers: true,
+            markers: true,
          },
          onUpdate: render,
       })
@@ -173,9 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
          canvasContext.clearRect(0, 0, canvas.width, canvas.height);
          canvasContext.drawImage(videoInfo.images[videoInfo.currentFrame], 0, 0);
       }
-   }
-
-   gsap.registerPlugin(ScrollTrigger);
+   };
 
    const videoPresentInfo = {
       totalFrames: 73,
@@ -185,99 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
       currentImage: (index) => `../images/frames/presents/${index}.webp`,
    };
 
-   const videoDemoInfo = {
-      totalFrames: 138,
-      totalTime: 5,
-      images: [],
-      currentFrame: 0,
-      currentImage: (index) => `../images/frames/particles/${index}.webp`,
-   };
-
-   const videoDemo1Info = {
-      totalFrames: 99,
-      totalTime: 3,
-      images: [],
-      currentFrame: 0,
-      currentImage: (index) => `../images/frames/manifestation/${index}.webp`,
-   };
-
-   const accumDemoInfo = {
-      totalFrames: 213,
-      totalTime: 8,
-      images: [],
-      currentFrame: 0,
-      currentImage: (index) => `../images/frames/accum/${index}.webp`,
-   };
-
-   const triggerDemoInfo = {
-      totalFrames: 93,
-      totalTime: 3,
-      images: [],
-      currentFrame: 0,
-      currentImage: (index) => `../images/frames/trigger/${index}.webp`,
-   };
-
-   const returnDemoInfo = {
-      totalFrames: 216,
-      totalTime: 8,
-      images: [],
-      currentFrame: 0,
-      currentImage: (index) => `../images/frames/return/${index}.webp`,
-   };
-
-   const lightsDemoInfo = {
-      totalFrames: 422,
-      totalTime: 10,
-      images: [],
-      currentFrame: 0,
-      currentImage: (index) => `../images/frames/lights/${index}.webp`,
-   };
-
-
-   promo();
    animateOnScroll('video-present', videoPresentInfo);
 
-   animateOnScroll('video-demo', videoDemoInfo);
-   animateOnScroll('video-demo-1', videoDemo1Info);
-   animateOnScroll('accum-demo', accumDemoInfo);
-   animateOnScroll('trigger-demo', triggerDemoInfo);
-   animateOnScroll('return-demo', returnDemoInfo);
-   animateOnScroll('lights-demo', lightsDemoInfo);
-
-   // ======= GSAP Animation ======= //
-
-   animate();
-
-   // ============ Tabs ============== //
-   const tabsBtn = document.querySelector('.tabs-button');
-   const tabsBtns = document.querySelectorAll('.tabs-button');
-   const tabsItems = document.querySelectorAll('.tabs-item');
-
-   function tabsButton(buttons, tabs, button) {
-      buttons.forEach(item => {
-         item.addEventListener('click', () => {
-            let currentBtn = item;
-            let tabId = currentBtn.getAttribute("data-tab");
-            let currentTab = document.querySelector(tabId);
-
-            if (!currentBtn.classList.contains('_active')) {
-
-               removeClass(buttons);
-               removeClass(tabs);
-
-               currentBtn.classList.add('_active');
-               currentTab.classList.add('_active');
-            }
-
-            function removeClass(elem) {
-               elem.forEach(item => {
-                  item.classList.remove('_active');
-               });
-            }
-
-         });
-         button.click();
-      });
-   }
-   tabsButton(tabsBtns, tabsItems, tabsBtn);
 })

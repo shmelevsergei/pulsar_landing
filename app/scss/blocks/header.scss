@@ -1,8 +1,30 @@
 .header {
-   padding: 28px 0;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+   &__wrapper {
+      padding: 28px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: transparent;
+      transition: all .3s ease-in;
+   }
+
+
+   &._active {
+      background-color: var(--colorBg);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+
+
+      .header__button-shop {
+         @media (min-width: 639.98px) {
+            display: inline-block;
+         }
+
+      }
+   }
 
    &__logo {
       width: 200px;
@@ -20,6 +42,16 @@
    }
 
    &__button {
+      display: flex;
+      gap: 10px;
+
+      &-shop {
+         display: none;
+
+         @media (min-width: 320px) and (max-width: 639.98px) {
+            display: none;
+         }
+      }
 
       a {
          @media (max-width: 639.98px) {
