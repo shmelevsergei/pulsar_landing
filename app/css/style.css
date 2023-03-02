@@ -816,14 +816,34 @@ body.menu-open {
 
 .present {
   margin-top: 140px;
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
 }
 @media (max-width: 639.98px) {
   .present {
     margin-top: 100px;
   }
 }
+.present canvas {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.present-text {
+  z-index: 9999;
+}
 .present__top-descr {
   width: 300px;
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 .present__text {
   font-size: 16px;
@@ -839,6 +859,13 @@ body.menu-open {
 }
 .present__middle-descr {
   max-width: 300px;
+  position: absolute;
+  top: 40%;
+  right: 50px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 .present__middle-descr ul li {
   padding-left: 24px;
@@ -851,11 +878,21 @@ body.menu-open {
 }
 .present__bottom-descr {
   max-width: 300px;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .video {
   margin-top: 140px;
-  height: 700px;
+  padding-top: 100px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
 }
 @media (max-width: 639.98px) {
   .video {
@@ -865,28 +902,44 @@ body.menu-open {
 }
 .video canvas {
   width: 100%;
-  height: 400px;
-  margin: 0 auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .accum {
+  margin-top: 140px;
+  padding-top: 100px;
   position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+}
+.accum canvas {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .accum__descr-top {
   position: absolute;
-  top: 87px;
-  right: 0;
-  z-index: 100;
-  width: 300px;
+  top: 165px;
+  right: 200px;
+  max-width: 300px;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  opacity: 0;
 }
 .accum__descr-bottom {
   position: absolute;
-  top: 111px;
-  left: 0;
-  z-index: 100;
-  width: 300px;
+  top: 189px;
+  left: 200px;
+  max-width: 300px;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  opacity: 0;
 }
 .accum__text {
   margin-top: 20px;
@@ -894,14 +947,28 @@ body.menu-open {
 }
 
 .trigger {
+  margin-top: 140px;
+  padding-top: 100px;
   position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+}
+.trigger canvas {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .trigger__descr {
   position: absolute;
   top: 340px;
-  left: 0;
-  z-index: 100;
+  left: 200px;
   width: 400px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 .trigger__text {
   margin-top: 20px;
@@ -909,14 +976,28 @@ body.menu-open {
 }
 
 .return {
+  margin-top: 140px;
+  padding-top: 100px;
   position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+}
+.return canvas {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .return__descr {
   position: absolute;
-  top: 79px;
-  right: 0;
-  z-index: 100;
+  top: 179px;
+  right: 200px;
   width: 400px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 .return__text {
   margin-top: 20px;
@@ -924,21 +1005,36 @@ body.menu-open {
 }
 
 .lights {
+  margin-top: 140px;
+  padding-top: 100px;
   position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+}
+.lights canvas {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .lights__descr {
   position: absolute;
-  top: 118px;
-  right: 0;
-  z-index: 100;
+  top: 218px;
+  right: 200px;
   width: 400px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .tabs {
   margin-top: 140px;
+  padding-top: 100px;
   position: relative;
   width: 100%;
-  height: 700px;
+  height: 100vh;
   -webkit-transform: translate(0, 100px);
       -ms-transform: translate(0, 100px);
           transform: translate(0, 100px);
@@ -960,42 +1056,41 @@ body.menu-open {
   }
 }
 .tabs-item {
-  width: 100vw;
+  width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.tabs video {
   display: none;
 }
 @media (max-width: 639.98px) {
-  .tabs video {
+  .tabs-item {
     width: 100%;
     height: 215px;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
 }
-.tabs video._active {
+.tabs-item._active {
   display: block;
 }
-.tabs img {
-  display: none;
+.tabs__video-wrapper {
+  width: 100%;
+  height: 100%;
 }
-.tabs img._active {
-  display: block;
+.tabs iframe {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .tabs__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: absolute;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  top: 62px;
   gap: 15px;
+  position: absolute;
+  margin-top: 57px;
+  z-index: 100;
 }
 @media (max-width: 639.98px) {
   .tabs__buttons {

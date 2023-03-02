@@ -1,8 +1,9 @@
 .tabs {
    margin-top: 140px;
+   padding-top: 100px;
    position: relative;
    width: 100%;
-   height: 700px;
+   height: 100vh;
 
    transform: translate(0, 100px);
    opacity: 0;
@@ -20,40 +21,40 @@
    }
 
    &-item {
-      width: 100vw;
+      width: 100%;
       height: 100%;
-      object-fit: cover;
-   }
-
-   video {
       display: none;
 
       @media (max-width:639.98px) {
          width: 100%;
          height: 215px;
-         object-fit: cover;
       }
 
       &._active {
          display: block;
       }
+
    }
 
-   img {
-      display: none;
+   &__video-wrapper {
+      width: 100%;
+      height: 100%;
+   }
 
-      &._active {
-         display: block;
-      }
+   iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
    }
 
    &__buttons {
       display: flex;
-      position: absolute;
       width: 100%;
       justify-content: center;
-      top: 62px;
       gap: 15px;
+      position: absolute;
+      margin-top: 57px;
+      z-index: 100;
 
       @media (max-width:639.98px) {
          flex-direction: column;

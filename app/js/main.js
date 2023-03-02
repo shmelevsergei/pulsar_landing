@@ -5,14 +5,15 @@ import { RectAreaLightHelper } from 'RectAreaLightHelper'
 import { RectAreaLightUniformsLib } from 'RectAreaLightUniformsLib';
 import preloader from './preloader.js';
 import animateBlocks from './animate.js';
+import animateHeader from './fixed-header.js';
 import tabsButton from './tabs.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
 
    Splitting();
-   luxy.init();
    preloader();
+   animateHeader();
    promo();
    animateBlocks();
    parallax();
@@ -168,52 +169,426 @@ document.addEventListener('DOMContentLoaded', () => {
       })
    }
 
-   function animateOnScroll(canvasID, videoInfo) {
-      const canvas = document.getElementById(canvasID);
-      const canvasContext = canvas.getContext('2d');
+   function sectionPresent() {
+      const sectionPresent = document.querySelector('.present');
+      const canvas = document.getElementById('video-present');
+      const ctx = canvas.getContext('2d');
+      const textTop = document.querySelector('.present__top-descr');
+      const textMiddle = document.querySelector('.present__middle-descr');
+      const textBottom = document.querySelector('.present__bottom-descr');
 
       canvas.width = 1920;
       canvas.height = 1080;
 
-      for (let i = 0; i <= videoInfo.totalFrames; i++) {
-         const img = new Image();
-         img.src = videoInfo.currentImage(i);
-         videoInfo.images.push(img);
+      let frameCount = 78;
+      const currentFrame = index => (`../images/frames/presents/${index}.webp`);
+
+      let images = [];
+      let presents = {
+         frame: 0
+      };
+
+      for (let i = 0; i < frameCount; i++) {
+         let img = new Image();
+         img.src = currentFrame(i);
+         images.push(img);
       }
 
-      gsap.to(videoInfo, {
-         currentFrame: videoInfo.totalFrames,
-         snap: 'currentFrame',
-         ease: 'none',
-         scrollTrigger: {
-            trigger: canvas,
-            start: 'top',
-            end: `bottom+=${videoInfo.totalFrames * videoInfo.totalTime}`,
-            scrub: true,
-            pin: true,
-            markers: true,
-         },
+      gsap.timeline({
          onUpdate: render,
+         scrollTrigger: {
+            trigger: sectionPresent,
+            pin: true,
+            scrub: true,
+            end: '+=400%',
+            // markers: true,
+         }
       })
 
-      videoInfo.images[0].onload = () => {
-         canvasContext.drawImage(videoInfo.images[0], 0, 0);
-      }
+         .to(textTop, {
+            opacity: 1,
+            duration: 6,
+         })
+         .to(textTop, {
+            opacity: 0,
+         })
+         .to(textMiddle, {
+            opacity: 1,
+            duration: 6,
+         })
+         .to(textMiddle, {
+            opacity: 0,
+         })
+         .to(textBottom, {
+            opacity: 1,
+            duration: 6,
+         })
+         .to(textBottom, {
+            opacity: 0,
+         })
+         .to(presents, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            duration: 20,
+         }, 0);
+
+
+      images[0].onload = render;
 
       function render() {
-         canvasContext.clearRect(0, 0, canvas.width, canvas.height);
-         canvasContext.drawImage(videoInfo.images[videoInfo.currentFrame], 0, 0);
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
+         ctx.drawImage(images[presents.frame], 0, 0);
       }
-   };
+   }
+   sectionPresent();
 
-   const videoPresentInfo = {
-      totalFrames: 73,
-      totalTime: 5,
-      images: [],
-      currentFrame: 0,
-      currentImage: (index) => `../images/frames/presents/${index}.webp`,
-   };
 
-   animateOnScroll('video-present', videoPresentInfo);
+   function sectionParticles() {
+      const sectionParticles = document.querySelector('.particles');
+      const canvas = document.getElementById('video-particles');
+      const ctx = canvas.getContext('2d');
+
+      canvas.width = 1920;
+      canvas.height = 1080;
+
+      let frameCount = 138;
+      const currentFrame = index => (`../images/frames/particles/${index}.webp`);
+
+      let images = [];
+      let particles = {
+         frame: 0
+      };
+
+      for (let i = 0; i < frameCount; i++) {
+         let img = new Image();
+         img.src = currentFrame(i);
+         images.push(img);
+      }
+
+      gsap.timeline({
+         onUpdate: render,
+         scrollTrigger: {
+            trigger: sectionParticles,
+            pin: true,
+            scrub: true,
+            end: '+=200%',
+            // markers: true,
+         }
+      })
+         .to(particles, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            duration: 1,
+         }, 0);
+
+
+      images[0].onload = render;
+
+      function render() {
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
+         ctx.drawImage(images[particles.frame], 0, 0);
+      }
+   }
+   sectionParticles();
+
+   function sectionManifestation() {
+      const sectionManifestation = document.querySelector('.manifestation');
+      const canvas = document.getElementById('video-manifestation');
+      const ctx = canvas.getContext('2d');
+
+      canvas.width = 1920;
+      canvas.height = 1080;
+
+      let frameCount = 99;
+      const currentFrame = index => (`../images/frames/manifestation/${index}.webp`);
+
+      let images = [];
+      let manifestation = {
+         frame: 0
+      };
+
+      for (let i = 0; i < frameCount; i++) {
+         let img = new Image();
+         img.src = currentFrame(i);
+         images.push(img);
+      }
+
+      gsap.timeline({
+         onUpdate: render,
+         scrollTrigger: {
+            trigger: sectionManifestation,
+            pin: true,
+            scrub: true,
+            end: '+=200%',
+            // markers: true,
+         }
+      })
+         .to(manifestation, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            duration: 1,
+         }, 0);
+
+
+      images[0].onload = render;
+
+      function render() {
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
+         ctx.drawImage(images[manifestation.frame], 0, 0);
+      }
+   }
+   sectionManifestation();
+
+   function sectionAccum() {
+      const sectionAccum = document.querySelector('.accum');
+      const canvas = document.getElementById('accum-video');
+      const ctx = canvas.getContext('2d');
+      const textRight = document.querySelector('.accum__descr-top');
+      const textLeft = document.querySelector('.accum__descr-bottom');
+
+      canvas.width = 1920;
+      canvas.height = 1080;
+
+      let frameCount = 213;
+      const currentFrame = index => (`../images/frames/accum/${index}.webp`);
+
+      let images = [];
+      let accum = {
+         frame: 0
+      };
+
+      for (let i = 0; i < frameCount; i++) {
+         let img = new Image();
+         img.src = currentFrame(i);
+         images.push(img);
+      }
+
+      gsap.timeline({
+         onUpdate: render,
+         scrollTrigger: {
+            trigger: sectionAccum,
+            pin: true,
+            scrub: true,
+            end: '+=400%',
+            // markers: true,
+         }
+      })
+
+         .to(textRight, {
+            opacity: 1,
+            duration: 6,
+         })
+         .to(textRight, {
+            opacity: 0,
+         })
+         .to(textLeft, {
+            opacity: 1,
+            duration: 6,
+         })
+         .to(textLeft, {
+            opacity: 0,
+         })
+
+         .to(accum, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            duration: 14,
+         }, 0);
+
+
+      images[0].onload = render;
+
+      function render() {
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
+         ctx.drawImage(images[accum.frame], 0, 0);
+      }
+   }
+   sectionAccum();
+
+   function sectionTrigger() {
+      const sectionTrigger = document.querySelector('.trigger');
+      const canvas = document.getElementById('trigger-demo');
+      const ctx = canvas.getContext('2d');
+      const text = document.querySelector('.trigger__descr');
+
+      canvas.width = 1920;
+      canvas.height = 1080;
+
+      let frameCount = 93;
+      const currentFrame = index => (`../images/frames/trigger/${index}.webp`);
+
+      let images = [];
+      let trigger = {
+         frame: 0
+      };
+
+      for (let i = 0; i < frameCount; i++) {
+         let img = new Image();
+         img.src = currentFrame(i);
+         images.push(img);
+      }
+
+      gsap.timeline({
+         onUpdate: render,
+         scrollTrigger: {
+            trigger: sectionTrigger,
+            pin: true,
+            scrub: true,
+            end: '+=200%',
+            // markers: true,
+         }
+      })
+
+         .to(text, {
+            opacity: 1,
+            duration: 10,
+         })
+         .to(text, {
+            opacity: 0,
+         })
+         .to(trigger, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            duration: 12,
+         }, 0);
+
+
+      images[0].onload = render;
+
+      function render() {
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
+         ctx.drawImage(images[trigger.frame], 0, 0);
+      }
+   }
+   sectionTrigger();
+
+   function sectionReturn() {
+      const sectionReturn = document.querySelector('.return');
+      const canvas = document.getElementById('return-demo');
+      const ctx = canvas.getContext('2d');
+      const text = document.querySelector('.return__descr');
+
+      canvas.width = 1920;
+      canvas.height = 1080;
+
+      let frameCount = 216;
+      const currentFrame = index => (`../images/frames/return/${index}.webp`);
+
+      let images = [];
+      let returnC = {
+         frame: 0
+      };
+
+      for (let i = 0; i < frameCount; i++) {
+         let img = new Image();
+         img.src = currentFrame(i);
+         images.push(img);
+      }
+
+      gsap.timeline({
+         onUpdate: render,
+         scrollTrigger: {
+            trigger: sectionReturn,
+            pin: true,
+            scrub: true,
+            end: '+=200%',
+            // markers: true,
+         }
+      })
+
+         .to(text, {
+            opacity: 1,
+            duration: 10,
+         })
+         .to(text, {
+            opacity: 0,
+         })
+         .to(returnC, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            duration: 12,
+         }, 0);
+
+
+      images[0].onload = render;
+
+      function render() {
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
+         ctx.drawImage(images[returnC.frame], 0, 0);
+      }
+   }
+   sectionReturn();
+
+   function sectionLights() {
+      const sectionLights = document.querySelector('.lights');
+      const canvas = document.getElementById('lights-demo');
+      const ctx = canvas.getContext('2d');
+      const text = document.querySelector('.lights__descr');
+
+      canvas.width = 1920;
+      canvas.height = 1080;
+
+      let frameCount = 422;
+      const currentFrame = index => (`../images/frames/lights/${index}.webp`);
+
+      let images = [];
+      let lights = {
+         frame: 0
+      };
+
+      for (let i = 0; i < frameCount; i++) {
+         let img = new Image();
+         img.src = currentFrame(i);
+         images.push(img);
+      }
+
+      gsap.timeline({
+         onUpdate: render,
+         scrollTrigger: {
+            trigger: sectionLights,
+            pin: true,
+            scrub: true,
+            end: '+=400%',
+            // markers: true,
+         }
+      })
+
+         .to(text, {
+            opacity: 1,
+            duration: 10,
+         })
+         .to(text, {
+            opacity: 0,
+         })
+         .to(lights, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            duration: 12,
+         }, 0);
+
+
+      images[0].onload = render;
+
+      function render() {
+         ctx.clearRect(0, 0, canvas.width, canvas.height);
+         ctx.drawImage(images[lights.frame], 0, 0);
+      }
+   }
+   sectionLights();
+
+
+
+
+
+
+
+
 
 })
